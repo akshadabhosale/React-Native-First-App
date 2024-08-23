@@ -1,21 +1,20 @@
-import { createAppContainer } from "react-navigation";
-import { createStackNavigator } from "react-navigation-stack";
-import HomeScreen from "./src/screens/HomeScreen";
-import Component from "./src/screens/Component";
-import FlatListExample from "./src/screens/List";
+import Home from "./src/screens/Home";
+import { createStaticNavigation } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-const navigator = createStackNavigator(
-  {
-    Home: HomeScreen,
-    Component:Component,
-    List:FlatListExample
+
+const navigation=createNativeStackNavigator({
+  screens:{
+    Home:Home
   },
-  {
-    initialRouteName: "Home",
-    defaultNavigationOptions: {
-      title: "App",
-    },
-  }
-);
+  initialRouteName: 'Home',
 
-export default createAppContainer(navigator);
+});
+
+const NavigationContainer=createStaticNavigation(navigation);
+
+
+export default function App(){
+  return <NavigationContainer/>
+}
+

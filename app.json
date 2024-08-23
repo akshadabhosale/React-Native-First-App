@@ -11,8 +11,10 @@
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
-    "ios": {
-      "supportsTablet": true
+    "jsEngine": "hermes",
+     "ios": {
+      "supportsTablet": true,
+       "jsEngine": "jsc"
     },
     "android": {
       "adaptiveIcon": {
